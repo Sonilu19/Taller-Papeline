@@ -22,12 +22,15 @@ jobs:
         java-version: '11'
  
     - name: Build with Maven
+      working-directory: demo
       run: mvn clean package
  
     - name: Run Unit Tests
+      working-directory: demo
       run: mvn test
  
     - name: Run Functional Tests
+      working-directory: demo
       run: mvn verify
  
     - name: Login to Docker Hub
