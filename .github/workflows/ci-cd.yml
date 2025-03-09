@@ -45,11 +45,9 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_TOKEN }}
  
     - name: Build Docker image
-      working-directory: demo
       run: docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/MyApi:latest .
  
     - name: Push Docker image
-      working-directory: demo
       run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/MyApi:latest
  
     - name: Create Git Tag
