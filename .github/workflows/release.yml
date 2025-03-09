@@ -42,6 +42,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: demo/target/my-api.jar
-        asset_name: my-api.jar
+        asset_path: demo/target/demo-0.0.1-SNAPSHOT.jar
+        asset_name: demo-${{ env.TAG_NAME }}.jar
+        asset_content_type: application/java-archive
         asset_content_type: application/java-archive
